@@ -1,0 +1,18 @@
+services:
+  xml_to_redis:
+    build: .
+    container_name: xml_to_redis
+    depends_on:
+      - redis
+    volumes:
+      - ./nodeapp:/app
+    environment:
+      - REDIS_HOST=redis
+    command: ["node", "/app/xmlToRedis.js", "/app/input.xml"]
+    #entrypoint: ["node", "/app/xmlToRedis.js"]
+
+  redis:
+    image: "redis:latest"
+    container_name: redis_store
+    ports:
+      - "6379:6379"
