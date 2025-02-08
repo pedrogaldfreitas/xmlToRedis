@@ -9,7 +9,6 @@ services:
     environment:
       - REDIS_HOST=redis
     command: ["node", "/app/xmlToRedis.js", "/app/input.xml"]
-    #entrypoint: ["node", "/app/xmlToRedis.js"]
 
   redis:
     image: "redis:latest"

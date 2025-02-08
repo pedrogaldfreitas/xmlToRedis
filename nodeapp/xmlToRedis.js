@@ -37,7 +37,6 @@ async function xmlToRedis() {
     
     
     // 1. Reading and parsing the XML file to JSON format for ease of use
-    //const filePath = "./config.xml";
     const xmlFile = fs.readFileSync(filePath, 'utf8');
     
     xml2js.parseString(xmlFile, (err, result) => {
